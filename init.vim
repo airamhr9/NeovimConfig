@@ -1,5 +1,6 @@
 call plug#begin()
 Plug 'sheerun/vim-polyglot'
+Plug 'turbio/bracey.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'frazrepo/vim-rainbow'
 Plug 'unblevable/quick-scope'
