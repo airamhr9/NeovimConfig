@@ -1,2 +1,2 @@
 require("config.remap")
-print("hello from config")
+require("config.set")
