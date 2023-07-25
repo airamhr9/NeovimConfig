@@ -1,0 +1,7 @@
+{ 
+    "rust-analyzer.server.path": "/home/airamhr/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin/rust-analyzer",
+    "coc.preferences.formatOnSaveFiletypes": [
+        "dart"
+    ],
+    "flutter.provider.enableSnippet": true
+}
