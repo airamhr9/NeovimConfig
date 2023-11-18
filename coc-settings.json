@@ -3,5 +3,6 @@
     "coc.preferences.formatOnSaveFiletypes": [
         "dart"
     ],
-    "flutter.provider.enableSnippet": true
+    "flutter.provider.enableSnippet": true,
+    "snippets.ultisnips.pythonPrompt": false
 }
