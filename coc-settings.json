@@ -4,5 +4,20 @@
         "dart"
     ],
     "flutter.provider.enableSnippet": true,
-    "snippets.ultisnips.pythonPrompt": false
+    "snippets.ultisnips.pythonPrompt": false,
+    "svelte.enable-ts-plugin": true,
+    "languageserver": {
+    "angular": {
+      "command": "ngserver",
+      "args": [
+        "--stdio",
+        "--tsProbeLocations",
+        "/opt/homebrew/lib/node_modules/typescript/lib",
+        "--ngProbeLocations",
+        "/opt/homebrew/lib/node_modules/@angular/language-server/bin"
+      ],
+      "filetypes": ["ts", "typescript", "html"],
+      "trace.server.verbosity": "verbose"
+    }
+  }
 }

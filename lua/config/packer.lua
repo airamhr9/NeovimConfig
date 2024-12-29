@@ -7,10 +7,24 @@ return require('packer').startup(function(use)
     use {
         'nvim-telescope/telescope.nvim', tag = '0.1.4',
         -- or                            , branch = '0.1.x',
-        requires = { {'nvim-lua/plenary.nvim'} }
+        requires = { { 'nvim-lua/plenary.nvim' } }
     }
-    use {"shortcuts/no-neck-pain.nvim", tag = "*" }
-    
+    use {
+        "nvim-telescope/telescope-file-browser.nvim",
+        requires = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" }
+    }
+    use { "shortcuts/no-neck-pain.nvim", tag = "*" }
+    use { 'windwp/nvim-ts-autotag',
+        config = function() require("nvim-ts-autotag").setup {} end }
+
+    use {
+        'nvim-tree/nvim-tree.lua',
+        requires = {
+            'nvim-tree/nvim-web-devicons', -- optional
+        },
+    }
+
+
     use({
         "bluz71/vim-moonfly-colors",
         as = "moonfly",
@@ -19,7 +33,7 @@ return require('packer').startup(function(use)
         end
     })
     use "lukas-reineke/indent-blankline.nvim"
-    use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
+    use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' })
     use('mbbill/undotree')
     use('tpope/vim-fugitive')
     use('fatih/vim-go')
@@ -28,10 +42,10 @@ return require('packer').startup(function(use)
         'nvim-lualine/lualine.nvim',
         requires = { 'nvim-tree/nvim-web-devicons', opt = true }
     }
-    use {'neoclide/coc.nvim', branch = 'release'}
+    use { 'neoclide/coc.nvim', branch = 'release' }
     use {
         "windwp/nvim-autopairs",
         config = function() require("nvim-autopairs").setup {} end }
 
-        use ('mg979/vim-visual-multi')
-    end)
+    use('mg979/vim-visual-multi')
+end)

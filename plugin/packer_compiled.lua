@@ -49,8 +49,8 @@ local function save_profiles(threshold)
 end
 
 time([[Luarocks path setup]], true)
-local package_path_str = "/home/airamhr/.cache/nvim/packer_hererocks/2.1.1725453128/share/lua/5.1/?.lua;/home/airamhr/.cache/nvim/packer_hererocks/2.1.1725453128/share/lua/5.1/?/init.lua;/home/airamhr/.cache/nvim/packer_hererocks/2.1.1725453128/lib/luarocks/rocks-5.1/?.lua;/home/airamhr/.cache/nvim/packer_hererocks/2.1.1725453128/lib/luarocks/rocks-5.1/?/init.lua"
-local install_cpath_pattern = "/home/airamhr/.cache/nvim/packer_hererocks/2.1.1725453128/lib/lua/5.1/?.so"
+local package_path_str = "/Users/airamhr/.cache/nvim/packer_hererocks/2.1.1732813678/share/lua/5.1/?.lua;/Users/airamhr/.cache/nvim/packer_hererocks/2.1.1732813678/share/lua/5.1/?/init.lua;/Users/airamhr/.cache/nvim/packer_hererocks/2.1.1732813678/lib/luarocks/rocks-5.1/?.lua;/Users/airamhr/.cache/nvim/packer_hererocks/2.1.1732813678/lib/luarocks/rocks-5.1/?/init.lua"
+local install_cpath_pattern = "/Users/airamhr/.cache/nvim/packer_hererocks/2.1.1732813678/lib/lua/5.1/?.so"
 if not string.find(package.path, package_path_str, 1, true) then
   package.path = package.path .. ';' .. package_path_str
 end
@@ -76,80 +76,95 @@ time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
   ["coc.nvim"] = {
     loaded = true,
-    path = "/home/airamhr/.local/share/nvim/site/pack/packer/start/coc.nvim",
+    path = "/Users/airamhr/.local/share/nvim/site/pack/packer/start/coc.nvim",
     url = "https://github.com/neoclide/coc.nvim"
   },
   ["indent-blankline.nvim"] = {
     loaded = true,
-    path = "/home/airamhr/.local/share/nvim/site/pack/packer/start/indent-blankline.nvim",
+    path = "/Users/airamhr/.local/share/nvim/site/pack/packer/start/indent-blankline.nvim",
     url = "https://github.com/lukas-reineke/indent-blankline.nvim"
   },
   ["lualine.nvim"] = {
     loaded = true,
-    path = "/home/airamhr/.local/share/nvim/site/pack/packer/start/lualine.nvim",
+    path = "/Users/airamhr/.local/share/nvim/site/pack/packer/start/lualine.nvim",
     url = "https://github.com/nvim-lualine/lualine.nvim"
   },
   moonfly = {
     config = { "\27LJ\2\n7\0\0\3\0\3\0\0056\0\0\0009\0\1\0'\2\2\0B\0\2\1K\0\1\0\24colorscheme moonfly\bcmd\bvim\0" },
     loaded = true,
-    path = "/home/airamhr/.local/share/nvim/site/pack/packer/start/moonfly",
+    path = "/Users/airamhr/.local/share/nvim/site/pack/packer/start/moonfly",
     url = "https://github.com/bluz71/vim-moonfly-colors"
   },
   ["no-neck-pain.nvim"] = {
     loaded = true,
-    path = "/home/airamhr/.local/share/nvim/site/pack/packer/start/no-neck-pain.nvim",
+    path = "/Users/airamhr/.local/share/nvim/site/pack/packer/start/no-neck-pain.nvim",
     url = "https://github.com/shortcuts/no-neck-pain.nvim"
   },
   ["nvim-autopairs"] = {
     config = { "\27LJ\2\n@\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\19nvim-autopairs\frequire\0" },
     loaded = true,
-    path = "/home/airamhr/.local/share/nvim/site/pack/packer/start/nvim-autopairs",
+    path = "/Users/airamhr/.local/share/nvim/site/pack/packer/start/nvim-autopairs",
     url = "https://github.com/windwp/nvim-autopairs"
+  },
+  ["nvim-tree.lua"] = {
+    loaded = true,
+    path = "/Users/airamhr/.local/share/nvim/site/pack/packer/start/nvim-tree.lua",
+    url = "https://github.com/nvim-tree/nvim-tree.lua"
   },
   ["nvim-treesitter"] = {
     loaded = true,
-    path = "/home/airamhr/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
+    path = "/Users/airamhr/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
     url = "https://github.com/nvim-treesitter/nvim-treesitter"
   },
+  ["nvim-ts-autotag"] = {
+    config = { "\27LJ\2\nA\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\20nvim-ts-autotag\frequire\0" },
+    loaded = true,
+    path = "/Users/airamhr/.local/share/nvim/site/pack/packer/start/nvim-ts-autotag",
+    url = "https://github.com/windwp/nvim-ts-autotag"
+  },
   ["nvim-web-devicons"] = {
-    loaded = false,
-    needs_bufread = false,
-    path = "/home/airamhr/.local/share/nvim/site/pack/packer/opt/nvim-web-devicons",
+    loaded = true,
+    path = "/Users/airamhr/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
     url = "https://github.com/nvim-tree/nvim-web-devicons"
   },
   ["packer.nvim"] = {
     loaded = true,
-    path = "/home/airamhr/.local/share/nvim/site/pack/packer/start/packer.nvim",
+    path = "/Users/airamhr/.local/share/nvim/site/pack/packer/start/packer.nvim",
     url = "https://github.com/wbthomason/packer.nvim"
   },
   ["plenary.nvim"] = {
     loaded = true,
-    path = "/home/airamhr/.local/share/nvim/site/pack/packer/start/plenary.nvim",
+    path = "/Users/airamhr/.local/share/nvim/site/pack/packer/start/plenary.nvim",
     url = "https://github.com/nvim-lua/plenary.nvim"
+  },
+  ["telescope-file-browser.nvim"] = {
+    loaded = true,
+    path = "/Users/airamhr/.local/share/nvim/site/pack/packer/start/telescope-file-browser.nvim",
+    url = "https://github.com/nvim-telescope/telescope-file-browser.nvim"
   },
   ["telescope.nvim"] = {
     loaded = true,
-    path = "/home/airamhr/.local/share/nvim/site/pack/packer/start/telescope.nvim",
+    path = "/Users/airamhr/.local/share/nvim/site/pack/packer/start/telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
   },
   undotree = {
     loaded = true,
-    path = "/home/airamhr/.local/share/nvim/site/pack/packer/start/undotree",
+    path = "/Users/airamhr/.local/share/nvim/site/pack/packer/start/undotree",
     url = "https://github.com/mbbill/undotree"
   },
   ["vim-fugitive"] = {
     loaded = true,
-    path = "/home/airamhr/.local/share/nvim/site/pack/packer/start/vim-fugitive",
+    path = "/Users/airamhr/.local/share/nvim/site/pack/packer/start/vim-fugitive",
     url = "https://github.com/tpope/vim-fugitive"
   },
   ["vim-go"] = {
     loaded = true,
-    path = "/home/airamhr/.local/share/nvim/site/pack/packer/start/vim-go",
+    path = "/Users/airamhr/.local/share/nvim/site/pack/packer/start/vim-go",
     url = "https://github.com/fatih/vim-go"
   },
   ["vim-visual-multi"] = {
     loaded = true,
-    path = "/home/airamhr/.local/share/nvim/site/pack/packer/start/vim-visual-multi",
+    path = "/Users/airamhr/.local/share/nvim/site/pack/packer/start/vim-visual-multi",
     url = "https://github.com/mg979/vim-visual-multi"
   }
 }
@@ -159,6 +174,10 @@ time([[Defining packer_plugins]], false)
 time([[Config for nvim-autopairs]], true)
 try_loadstring("\27LJ\2\n@\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\19nvim-autopairs\frequire\0", "config", "nvim-autopairs")
 time([[Config for nvim-autopairs]], false)
+-- Config for: nvim-ts-autotag
+time([[Config for nvim-ts-autotag]], true)
+try_loadstring("\27LJ\2\nA\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\20nvim-ts-autotag\frequire\0", "config", "nvim-ts-autotag")
+time([[Config for nvim-ts-autotag]], false)
 -- Config for: moonfly
 time([[Config for moonfly]], true)
 try_loadstring("\27LJ\2\n7\0\0\3\0\3\0\0056\0\0\0009\0\1\0'\2\2\0B\0\2\1K\0\1\0\24colorscheme moonfly\bcmd\bvim\0", "config", "moonfly")
