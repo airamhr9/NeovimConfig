@@ -15,7 +15,7 @@ return require('packer').startup(function(use)
     }
     use { "shortcuts/no-neck-pain.nvim", tag = "*" }
     use { 'windwp/nvim-ts-autotag',
-        config = function() require("nvim-ts-autotag").setup {} end }
+    config = function() require("nvim-ts-autotag").setup {} end }
 
     use {
         'nvim-tree/nvim-tree.lua',
@@ -24,6 +24,7 @@ return require('packer').startup(function(use)
         },
     }
 
+    use "Exafunction/codeium.nvim"
 
     use({
         "bluz71/vim-moonfly-colors",
@@ -38,14 +39,27 @@ return require('packer').startup(function(use)
     use('tpope/vim-fugitive')
     use('fatih/vim-go')
 
+    use 'hrsh7th/nvim-cmp'         -- Completion framework
+    use 'hrsh7th/cmp-nvim-lsp'     -- LSP source for nvim-cmp
+    use 'hrsh7th/cmp-buffer'       -- Buffer source for nvim-cmp
+    use 'hrsh7th/cmp-path'         -- Path source for nvim-cmp
+    use 'hrsh7th/cmp-cmdline'      -- Command-line source for nvim-cmp
+    use 'saadparwaiz1/cmp_luasnip' -- Snippet source for nvim-cmp
+    use 'L3MON4D3/LuaSnip'         -- Snippet engine
+
+    -- LSP configuration
+    use 'neovim/nvim-lspconfig'    -- Collection of configurations for built-in LSP
+    use 'williamboman/mason.nvim'  -- LSP installer
+    use 'williamboman/mason-lspconfig.nvim'
+
     use {
         'nvim-lualine/lualine.nvim',
         requires = { 'nvim-tree/nvim-web-devicons', opt = true }
     }
-    use { 'neoclide/coc.nvim', branch = 'release' }
+    --use { 'neoclide/coc.nvim', branch = 'release' }
     use {
         "windwp/nvim-autopairs",
         config = function() require("nvim-autopairs").setup {} end }
 
-    use('mg979/vim-visual-multi')
-end)
+        use('mg979/vim-visual-multi')
+    end)
