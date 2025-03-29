@@ -1,4 +1,5 @@
 local lspconfig = require('lspconfig')
+vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
 
 require('mason').setup({})
 require('mason-lspconfig').setup({
