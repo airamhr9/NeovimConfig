@@ -1,104 +1,117 @@
 return {
-  "neovim/nvim-lspconfig",
-  event = { "BufReadPre", "BufNewFile" },
-  dependencies = {
-    { "antosha417/nvim-lsp-file-operations", config = true },
-  },
+  {
+    "neovim/nvim-lspconfig",
+    event = { "BufReadPre", "BufNewFile" },
+    dependencies = {
+      { "antosha417/nvim-lsp-file-operations", config = true },
+    },
 
-  config = function()
-    local lspconfig = require("lspconfig")
-    local keymap = vim.keymap
-    local opts = { noremap = true, silent = true }
+    config = function()
+      local lspconfig = require("lspconfig")
+      local keymap = vim.keymap
 
-    local on_attach = function(client, bufnr)
-      opts.buffer = bufnr
+      local opts = {
+        noremap = true,
+        silent = true,
+      }
 
-      opts.desc = "Show LSP References"
-      keymap.set("n", "gr", "<cmd>Telescope lsp_references<CR>", opts)
+      local on_attach = function(_, bufnr)
+        opts.buffer = bufnr
 
-      opts.desc = "Go to declaration"
-      keymap.set("n", "gD", vim.lsp.buf.declaration, opts)
+        opts.desc = "Show LSP References"
+        keymap.set("n", "gr", "<cmd>Telescope lsp_references<CR>", opts)
 
-      opts.desc = "Show LSP definitions"
-      keymap.set("n", "gd", "<cmd>Telescope lsp_definitions<CR>", opts)
+        opts.desc = "Go to declaration"
+        keymap.set("n", "gD", vim.lsp.buf.declaration, opts)
 
-      opts.desc = "Show LSP implementations"
-      keymap.set("n", "gi", "<cmd>Telescope lsp_implementations<CR>", opts)
+        opts.desc = "Show LSP definitions"
+        keymap.set("n", "gd", "<cmd>Telescope lsp_definitions<CR>", opts)
 
-      opts.desc = "Show LSP type definitions"
-      keymap.set("n", "gt", "<cmd>Telescope lsp_type_definitions<CR>", opts)
+        opts.desc = "Show LSP implementations"
+        keymap.set("n", "gi", "<cmd>Telescope lsp_implementations<CR>", opts)
 
-      opts.desc = "Show available code actions"
-      keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, opts)
+        opts.desc = "Show LSP type definitions"
+        keymap.set("n", "gt", "<cmd>Telescope lsp_type_definitions<CR>", opts)
 
-      opts.desc = "Smart rename"
-      keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts)
+        opts.desc = "Show available code actions"
+        keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, opts)
 
-      opts.desc = "Show buffer diagnostics"
-      keymap.set("n", "<leader>D", "<cmd>Telescope diagnostics bufnr=0<CR>", opts)
+        opts.desc = "Smart rename"
+        keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts)
 
-      opts.desc = "Show line diagnostics"
-      keymap.set("n", "<leader>d", vim.diagnostic.open_float, opts)
+        opts.desc = "Show buffer diagnostics"
+        keymap.set("n", "<leader>D", "<cmd>Telescope diagnostics bufnr=0<CR>", opts)
 
-      opts.desc = "Show documentation for element under cursor"
-      keymap.set("n", "K", vim.lsp.buf.hover, opts)
+        opts.desc = "Show line diagnostics"
+        keymap.set("n", "<leader>d", vim.diagnostic.open_float, opts)
 
-      opts.desc = "Restart LSP"
-      keymap.set("n", "<leader>rs", ":LspRestart<CR>", opts)
-    end
+        opts.desc = "Show documentation for element under cursor"
+        keymap.set("n", "K", vim.lsp.buf.hover, opts)
+
+        opts.desc = "Restart LSP"
+        keymap.set("n", "<leader>rs", ":LspRestart<CR>", opts)
+      end
 
 
-    lspconfig["angularls"].setup({
-      on_attach = on_attach
-    })
-    lspconfig["bashls"].setup({
-      on_attach = on_attach
-    })
-    lspconfig["cssls"].setup({
-      on_attach = on_attach
-    })
-    lspconfig["tailwindcss"].setup({
-      on_attach = on_attach
-    })
-    lspconfig["dockerls"].setup({
-      on_attach = on_attach
-    })
-    lspconfig["html"].setup({
-      on_attach = on_attach
-    })
-    lspconfig["htmx"].setup({
-      on_attach = on_attach
-    })
-    lspconfig["jdtls"].setup({
-      on_attach = on_attach
-    })
-    lspconfig["ts_ls"].setup({
-      on_attach = on_attach
-    })
-    lspconfig["jsonls"].setup({
-      on_attach = on_attach
-    })
-    lspconfig["kotlin_language_server"].setup({
-      on_attach = on_attach
-    })
-    lspconfig["lua_ls"].setup({
-      on_attach = on_attach,
-      settings = {
-        Lua = {
-          diagnostics = {
-            globals = { "vim" }
+      lspconfig["angularls"].setup({
+        on_attach = on_attach
+      })
+      lspconfig["bashls"].setup({
+        on_attach = on_attach
+      })
+      lspconfig["cssls"].setup({
+        on_attach = on_attach
+      })
+      lspconfig["tailwindcss"].setup({
+        on_attach = on_attach
+      })
+      lspconfig["dockerls"].setup({
+        on_attach = on_attach
+      })
+      lspconfig["html"].setup({
+        on_attach = on_attach
+      })
+      lspconfig["htmx"].setup({
+        on_attach = on_attach
+      })
+      lspconfig["jdtls"].setup({
+        on_attach = on_attach
+      })
+      lspconfig["ts_ls"].setup({
+        on_attach = on_attach
+      })
+      lspconfig["jsonls"].setup({
+        on_attach = on_attach
+      })
+      lspconfig["kotlin_language_server"].setup({
+        on_attach = on_attach
+      })
+      lspconfig["lua_ls"].setup({
+        on_attach = on_attach,
+        settings = {
+          Lua = {
+            diagnostics = {
+              globals = { "vim" }
+            }
           }
         }
-      }
-    })
-    lspconfig["ltex"].setup({
-      on_attach = on_attach
-    })
-    lspconfig["vacuum"].setup({
-      on_attach = on_attach
-    })
-    lspconfig["sqlls"].setup({
-      on_attach = on_attach
-    })
-  end
+      })
+      lspconfig["ltex"].setup({
+        on_attach = on_attach
+      })
+      lspconfig["vacuum"].setup({
+        on_attach = on_attach
+      })
+      lspconfig["sqlls"].setup({
+        on_attach = on_attach
+      })
+    end
+  },
+  {
+    'luozhiya/lsp-virtual-improved.nvim',
+    event = { 'LspAttach' },
+    config = function()
+      require('lsp-virtual-improved').setup()
+    end,
+  }
 }
